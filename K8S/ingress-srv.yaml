@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: bahattinaksoy123.com
+    http:
+      paths:
+      - path: /api/platformservice/v1
+        pathType: Prefix
+        backend:
+          service:
+            name: platformservice-clusterip-service
+            port:
+              number: 8080
+      - path: /api/commandservice/v1
+        pathType: Prefix
+        backend:
+          service:
+            name: commandservice-clusterip-service
+            port:
+              number: 8080

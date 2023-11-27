@@ -137,3 +137,4 @@ D:\MICROSERVICES\PlatformService\obj\Debug\net8.0\refint\PlatformService.dll
 D:\MICROSERVICES\PlatformService\obj\Debug\net8.0\PlatformService.pdb
 D:\MICROSERVICES\PlatformService\obj\Debug\net8.0\PlatformService.genruntimeconfig.cache
 D:\MICROSERVICES\PlatformService\obj\Debug\net8.0\ref\PlatformService.dll
+D:\MICROSERVICES\PlatformService\bin\Debug\net8.0\appsettings.Production.json

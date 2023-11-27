@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commands-deployment
+  labels:
+    app: commandservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commandservicepod
+  template:
+    metadata:
+      labels:
+        app: commandservicepod
+    spec:
+      containers:
+      - name: commanservicecontainer
+        image: bahattinaksoy123/commandservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: commandservice-clusterip-service
+spec:
+  type: ClusterIP
+  selector:
+    app: commandservicepod
+  ports:
+  - name: commandservicepod
+    protocol: TCP
+    port: 80
+    targetPort: 80
